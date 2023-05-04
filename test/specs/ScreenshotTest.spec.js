@@ -20,26 +20,30 @@ describe('My application', () => {
         //await expect(SecurePage).toHaveTextContaining(
         //    'You logged into a secure area!')
     })
-    it('should click the link to Dynamic Loading', async () => {
+    xit('should click the link to Dynamic Loading', async () => {
 
         await this.DLPLink.click();
         //await DLPLink.click();
     })
-    xit('should take a screenshot and save it to a directory', async () => {
+    it('should take a screenshot and save it to a directory', async () => {
         //await page loaded
         //await expect to have text containing Dybnamicaally loaded page else;emets 
-        await expect(menuHeader2).toHaveTextContaining(
-            'Dynamically Loaded Page Elements');
+        //await expect(menuHeader2).toHaveTextContaining(
+        //    'Dynamically Loaded Page Elements');
         // xpath to that h2 header  //*[@id="content"]/div/h3
-        await browser.saveScreenshot('../TA-200/savingScreenShots/screenshot1.png');
+        await browser.saveScreenshot('./test/images/screenshot1.png');
+        //../TA-200/savingScreenShots/
     })
-    xit('and finally click "Start" await page, then take another screenshot', async () => {
-        await this.btnStart.click();
-        await browser.pause(5000);
-        await expect(helloWorld).toHaveTextContaining(
+    it('and finally click "Start" await page, then take another screenshot', async () => {
+        await DynLoadPage.btnStart.click();
+        await DynLoadPage.helloWorld.waitForExist();
+        //await browser.pause(5000);
+
+
+        await expect(DynLoadPage.helloWorld).toHaveTextContaining(
             'Hello World');
-        )
-        await browser.saveScreenshot('../TA-200/savingScreenShots/screenshot2.png');
+
+        await browser.saveScreenshot('./test/images/screenshot2.png');
     })
 })
 

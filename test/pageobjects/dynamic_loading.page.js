@@ -51,9 +51,11 @@ class DynLoadPage extends Page {
     //    return $('#password');
     //}
 
-    //get btnSubmit () {
-    //    return $('button[type="submit"]');
-    //}
+    get btnStart () {
+        return $('//*[@id="start"]/button')
+        //return $('button[type="submit"]');
+        ////*[@id="start"]/button
+    }
 
     /**
      * a method to encapsule automation code to interact with the page
@@ -73,7 +75,7 @@ class DynLoadPage extends Page {
     //}
 
     open () {
-        return super.open('');
+        return super.open('dynamic_loading/2');
     }
 }
 
